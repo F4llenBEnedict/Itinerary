@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dream Destination - Iceland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #14304f;
+    --navy-deep: #0c1f34;
+    --ice: #eef5f7;
+    --ice-card: #e2edf0;
+    --gold: #c9a24b;
+    --gold-soft: #d9bd7a;
+    --frost: #6f93a6;
+    --ink: #2a3844;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: var(--ice);
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+  }
+
+  a { color: var(--navy); }
+
+  /* ---------- NAV ---------- */
+  .navbar {
+    background: white;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  .logo h2 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .logo p {
+    margin: 4px 0 0 0;
+    color: var(--frost);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* ---------- HERO ---------- */
+  .bg {
+    background:
+      linear-gradient(180deg, rgba(10,18,28,0.25) 0%, rgba(10,18,28,0.55) 65%, rgba(10,18,28,0.8) 100%),
+      url('https://images.unsplash.com/photo-1501908734255-16579c18c25f?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 60px 70px;
+    color: white;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .bg-top {
+    font-size: 17px;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 12px 0;
+    letter-spacing: 1px;
+    color: var(--gold-soft);
+  }
+
+  .bg h1 {
+    font-size: 84px;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 18px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .bg-bottom {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold-soft);
+    border-bottom: 1px solid var(--gold);
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    font-weight: 500;
+  }
+
+  .bg p.lede {
+    padding-top: 0;
+    font-size: 19px;
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 300;
+    color: #eef2f4;
+  }
+
+  /* ---------- OVERVIEW CARDS ---------- */
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .card {
+    background-color: var(--ice-card);
+    width: 210px;
+    box-sizing: border-box;
+    padding: 30px 22px;
+    margin: 40px 10px 10px;
+    border-radius: 4px;
+    border-top: 3px solid var(--gold);
+    text-align: center;
+  }
+
+  .card .icon {
+    font-size: 26px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  /* ---------- SECTION INTRO ---------- */
+  .intro {
+    max-width: 700px;
+    margin: 70px auto 10px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .intro h4 {
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin: 0 0 14px 0;
+  }
+
+  .intro .rule {
+    width: 70px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+
+  .intro p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--frost);
+    margin: 0;
+  }
+
+  /* ---------- CONTENT ---------- */
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+  }
+
+  .day-label {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 50px 0 6px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 30px;
+    margin: 0 0 14px 0;
+  }
+
+  .content > p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 20px 0;
+  }
+
+  ol.stops {
+    list-style: none;
+    counter-reset: stop;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.stops > li {
+    counter-increment: stop;
+    position: relative;
+    padding: 0 0 0 46px;
+    margin-bottom: 26px;
+  }
+
+  ol.stops > li::before {
+    content: counter(stop, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ol.stops > li > strong {
+    font-size: 18px;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+
+  ol.stops ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--ink);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  .plain-list {
+    padding-left: 18px;
+    line-height: 1.9;
+    font-size: 15.5px;
+  }
+
+  .plain-list.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+    padding-left: 18px;
+  }
+
+  .pack-group {
+    margin-bottom: 22px;
+  }
+
+  .pack-group > strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .facts {
+    background: var(--ice-card);
+    border-radius: 4px;
+    padding: 30px 36px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .facts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+  }
+
+  .facts li {
+    font-size: 15px;
+  }
+
+  .facts li strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid #d3dee2;
+    margin: 46px 0 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--frost);
+    background: white;
+  }
+
+  @media (max-width: 700px) {
+    .bg { padding: 0 24px 50px; height: auto; min-height: 480px; }
+    .bg h1 { font-size: 52px; }
+    .navbar { padding: 16px 24px; }
+    .plain-list.grid, .facts ul { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <h2>ICELAND</h2>
+    <p>WHERE FIRE MEETS ICE</p>
+  </div>
+</nav>
+
+<div class="bg">
+  <p class="bg-top">My Dream Destination:</p>
+  <h1>ICELAND</h1>
+  <p class="bg-bottom">A 2-DAY ITINERARY ADVENTURE</p>
+  <p class="lede">Iceland is a land of fire and ice, where glaciers meet volcanoes, waterfalls dance in the wind, and the Northern Lights paint the sky with magic.</p>
+</div>
+
+<div class="box">
+  <div class="card">
+    <span class="icon">🗺️</span>
+    <h3>2-Day Itinerary</h3>
+    <p>Follow a simple adventure through some of Iceland's most famous sights.</p>
+  </div>
+  <div class="card">
+    <span class="icon">🍲</span>
+    <h3>Food to Try</h3>
+    <p>Taste Icelandic favorites, from skyr and rye bread to fresh seafood.</p>
+  </div>
+  <div class="card">
+    <span class="icon">🏛️</span>
+    <h3>Culture & Traditions</h3>
+    <p>Learn about Iceland's rich history and unique customs.</p>
+  </div>
+  <div class="card">
+    <span class="icon">🎒</span>
+    <h3>Things to Bring</h3>
+    <p>Prepare for the unique weather and terrain of Iceland.</p>
+  </div>
+  <div class="card">
+    <span class="icon">📍</span>
+    <h3>Famous Places</h3>
+    <p>Experience Icelandic culture and friendly locals.</p>
+  </div>
+</div>
+
+<div class="intro">
+  <h4>Welcome to Iceland</h4>
+  <div class="rule"></div>
+  <p>A two-day route through the land of fire and ice — from bubbling geysers and thundering waterfalls to black sand shores.</p>
+</div>
+
+<div class="content">
+
+  <span class="day-label">Day One</span>
+  <h2>The Golden Circle</h2>
+  <p>Your first day will take you through Iceland's most iconic landmarks, featuring geysers, waterfalls, and dramatic geological formations.</p>
+
+  <ol class="stops">
+    <li>
+      <strong>Þingvellir National Park</strong>
+      <ul>
+        <li>UNESCO World Heritage Site</li>
+        <li>Walk between continental plates</li>
+        <li>Stunning valley views</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Geysir & Strokkur</strong>
+      <ul>
+        <li>Watch Strokkur geyser erupt</li>
+        <li>Visit geothermal hot springs</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Gullfoss Waterfall</strong>
+      <ul>
+        <li>Marvel at the powerful cascade</li>
+        <li>Known as the "Golden Waterfall"</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Kerið Crater</strong>
+      <ul>
+        <li>Visit a colorful volcanic crater</li>
+        <li>Blue crater lake</li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr class="divider">
+
+  <span class="day-label">Day Two</span>
+  <h2>South Coast Adventure</h2>
+  <p>Experience the dramatic southern coast with massive waterfalls, black sand beaches, and striking rock formations.</p>
+
+  <ol class="stops">
+    <li>
+      <strong>Seljalandsfoss Waterfall</strong>
+      <ul>
+        <li>Walk behind the waterfall</li>
+        <li>Unique perspective of cascading water</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Skógafoss Waterfall</strong>
+      <ul>
+        <li>Feel the mist of massive falls</li>
+        <li>One of Iceland's most powerful waterfalls</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Reynisfjara Black Sand Beach</strong>
+      <ul>
+        <li>See dramatic black sand</li>
+        <li>Towering basalt columns</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Vík & Skaftafell</strong>
+      <ul>
+        <li>Visit Iceland's southernmost town</li>
+        <li>Experience local culture</li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr class="divider">
+
+  <h2 style="margin-top:50px;">Famous Places to Visit</h2>
+  <ul class="plain-list grid">
+    <li>Hallgrímskirkja Church</li>
+    <li>Jökulsárlón Glacier Lagoon</li>
+    <li>Vatnajökull Ice Cave</li>
+    <li>Kirkjufell Mountain</li>
+    <li>Northern Lights</li>
+    <li>Blue Lagoon</li>
+  </ul>
+
+  <h2 style="margin-top:50px;">What to Pack</h2>
+
+  <div class="pack-group">
+    <strong>Warm Clothing</strong>
+    <ul class="plain-list">
+      <li>Thermal layers</li>
+      <li>Waterproof jacket</li>
+      <li>Warm hat and gloves</li>
+    </ul>
+  </div>
+
+  <div class="pack-group">
+    <strong>Footwear</strong>
+    <ul class="plain-list">
+      <li>Sturdy hiking boots</li>
+      <li>Waterproof shoes</li>
+    </ul>
+  </div>
+
+  <div class="pack-group">
+    <strong>Photography Gear</strong>
+    <ul class="plain-list">
+      <li>Camera</li>
+      <li>Extra batteries</li>
+      <li>Tripod</li>
+    </ul>
+  </div>
+
+  <div class="pack-group">
+    <strong>Travel Essentials</strong>
+    <ul class="plain-list">
+      <li>Passport</li>
+      <li>Travel insurance</li>
+      <li>Sunscreen and lip balm</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:50px;">Foods to Try</h2>
+  <ul class="plain-list">
+    <li>Icelandic lamb stew</li>
+    <li>Fresh Arctic char</li>
+    <li>Rye bread, cooked in geothermal heat</li>
+    <li>Lobster soup</li>
+    <li>Traditional Icelandic seafood</li>
+  </ul>
+
+  <h2 style="margin-top:50px;">Useful Resources</h2>
+  <p style="margin-bottom:12px;">For more information about visiting Iceland, check out these helpful links:</p>
+  <ul class="plain-list">
+    <li><a href="https://www.visiticeland.com">Visit Iceland — Official Tourism Guide</a></li>
+    <li><a href="https://www.bluelagoon.com">Blue Lagoon Iceland</a></li>
+    <li><a href="https://www.iceland.is">Iceland.is — Government Travel Information</a></li>
+  </ul>
+
+  <h2 style="margin-top:50px;">Quick Facts About Iceland</h2>
+  <div class="facts">
+    <ul>
+      <li><strong>Capital:</strong> Reykjavík</li>
+      <li><strong>Language:</strong> Icelandic</li>
+      <li><strong>Currency:</strong> Icelandic Króna (ISK)</li>
+      <li><strong>Population:</strong> Around 390,000 people</li>
+      <li><strong>Time zone:</strong> GMT (UTC+0)</li>
+      <li><strong>Best time to visit:</strong> May to September</li>
+      <li><strong>Northern Lights season:</strong> September to April</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>MY DREAM DESTINATION &mdash; ICELAND</footer>
+
+</body>
+</html>
